@@ -24,7 +24,7 @@ public class FileReaderUtil {
         List<String> lines = Files.readAllLines(Path.of(filePath));
 
         for (String line : lines) {
-            String[] parts = line.split(":");
+            String[] parts = line.split(",");
             if (parts.length == 2) {
                 outputMap.put(parts[0].trim(), parts[1].trim());
             }

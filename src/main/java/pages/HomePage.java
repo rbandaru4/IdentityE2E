@@ -10,10 +10,13 @@ public class HomePage {
     @FindBy(id = "vrm-input")
     private WebElement vehicleRegistrationInput;
 
-    @FindBy(id = "mileage-input") //there is no mileage input text to enter in the page.
+    @FindBy(id = "mileage-input")
     private WebElement mileageInput;
 
     @FindBy(class = "Button-module__label-SKEy")
+    private WebElement confirmValue;
+	
+	@FindBy(class = "MotorwayValuationPage__offer-xgNB")
     private WebElement valuationResult;
 
     public HomePage(WebDriver driver) {
@@ -32,9 +35,12 @@ public class HomePage {
         mileageInput.sendKeys(mileage);
         mileageInput.sendKeys(Keys.RETURN);
     }
+	
+	public void submitValue() {
+		confirmValue.click();
+	}
 
     public String getValuation() {
         return valuationResult.getText();
     }
 }
-ss

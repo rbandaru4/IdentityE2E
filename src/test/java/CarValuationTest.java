@@ -33,7 +33,9 @@ public class CarValuationTest {
         for (String reg : registrationNumbers) {
             driver.get("https://motorway.co.uk/");
             homePage.enterRegistration(reg);
-            //homePage.enterMileage(String.valueOf(new Random().nextInt(100000) + 5000)); // Random mileage
+			homePage.submitValue();
+            homePage.enterMileage(String.valueOf(new Random().nextInt(100000) + 5000)); // Random mileage
+			homePage.submitValue();
             String actualValuation = homePage.getValuation();
 
             String expectedValuation = expectedValues.get(reg);
